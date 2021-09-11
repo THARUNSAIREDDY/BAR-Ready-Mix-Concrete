@@ -1,0 +1,84 @@
+{% load static %}
+<style>
+    .navbar .nav-item:not(:last-child) {
+        margin-right: 50px;
+      }
+       
+      .dropdown-toggle::after {
+         transition: transform 0.15s linear; 
+      }
+       
+      .show.dropdown .dropdown-toggle::after {
+        transform: translateY(3px);
+      }
+      .logo{
+          width: 20%;
+          height: 20%;
+      }
+      .nav-bk2{
+        background: #23074d;  
+        background: -webkit-linear-gradient(to right, #cc5333, #23074d);  
+        background: linear-gradient(to right, #cc5333, #23074d); 
+        
+        }
+        .dropdown-menu {
+          margin-top: 0;
+        }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-bk2">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">
+        <img class="logo horizontal-logo" src="{% static 'images/logo.jpeg' %}" alt="" style="border-radius: 20%;"> <span style="color: darkturquoise;"><span style="width: 15%;"><b>BAR</b></span></span><span style="color: rgb(179, 255, 80);"><span style="width: 15%;"><b> ReadyMix</b></span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'hm' %}">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'at' %}">About</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'gallary' %}">Gallery</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'ct' %}">Contact Us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'events' %}">Events</a>
+          </li>
+         </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    const $dropdown = $(".dropdown");
+const $dropdownToggle = $(".dropdown-toggle");
+const $dropdownMenu = $(".dropdown-menu");
+const showClass = "show";
+ 
+$(window).on("load resize", function() {
+  if (this.matchMedia("(min-width: 768px)").matches) {
+    $dropdown.hover(
+      function() {
+        const $this = $(this);
+        $this.addClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "true");
+        $this.find($dropdownMenu).addClass(showClass);
+      },
+      function() {
+        const $this = $(this);
+        $this.removeClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "false");
+        $this.find($dropdownMenu).removeClass(showClass);
+      }
+    );
+  } else {
+    $dropdown.off("mouseenter mouseleave");
+  }
+});
+  </script>

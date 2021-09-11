@@ -9,7 +9,7 @@ def home(request):
 	return render(request,'html/home.html',{"dest":dest})
 
 def about(request):
-	return render(request,'html/about.html')
+	return render(request,'html/abou.html')
 
 def contact(request):
 	return render(request,'html/contact.html')

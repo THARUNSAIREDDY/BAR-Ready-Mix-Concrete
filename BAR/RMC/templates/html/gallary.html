@@ -1,16 +1,17 @@
 {% extends 'html/base.html' %}
 {% block title %}Gallary{% endblock %}
 {% block content %}
-<br>
-<br>
-
+<html>
+   <style>
+      body{
+         background-image: url('https://images.pexels.com/photos/132197/pexels-photo-132197.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+      }
+   </style>
 <!-- Gallery -->
-<div class="bg-image" 
-   style="background-image: url('https://cdn.ca.emap.com/wp-content/uploads/sites/9/2020/04/shutterstock_462501376-e1587046954797.jpg');
-   height:50%">
+
 <!-- Page Content -->
 <div class="container" >
-   <h1 class="font-weight-light text-center text-white text-lg-left mt-4 mb-0">Our Gallery</h1>
+   <h1 class="font-weight-light text-center text-white text-lg-left mt-4 mb-0">Images</h1>
    <hr class="mt-2 mb-5">
    <div class="row text-center text-lg-left">
       {% for photo in photo %}
@@ -24,4 +25,5 @@
    </div>
 </div>
 <!-- /.container -->
+</html>
 {% endblock %}
